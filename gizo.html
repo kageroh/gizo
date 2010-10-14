@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title>免許証ジェネレータ</title>
+	<link rel="stylesheet" href="gizo.css" />
+	<script src="jquery-1.4.2.min.js"></script>
+	<script src="gizo.js"></script>
+  </head>
+  <body>
+	<div id="card">
+	  <div id="box">
+		<div id="name">
+		  <span class="label">氏名</span><span class="value"></span>
+		</div>
+		<div id="birthdate">
+		  <span class="value"></span>
+		</div>
+		<div id="address1">
+		  <span class="label">本籍</span><span class="value"></span>
+		</div>
+		<div id="address2">
+		  <span class="label">住所</span><span class="value"></span>
+		</div>
+		<div id="issue">
+		  <span class="label">交付</span><span class="value"></span>
+		</div>
+		<div id="limitation">
+		  <span class="value"></span>
+		</div>
+		<div id="licensecode">
+		  <span class="label"><em>番号</em></span><span class="value"></span>
+		</div>
+		<div id="date1">
+		  <span class="label"><em>二･小･原</em></span><span class="value"></span>
+		</div>
+		<div id="date2">
+		  <span class="label"><em>他</em></span><span class="value"></span>
+		</div>
+		<div id="date3">
+		  <span class="label"><em>二種</em></span><span class="value"></span>
+		</div>
+		<div id="lic_class">
+		  <table>
+			<tbody>
+			  <tr>
+				<th rowspan="2">
+				  <pre class="label">種
+類</pre>
+				</th>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+			  </tr>
+			  <tr>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+				<td><pre class="value"></pre></td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+		<div id="condition">
+		  <pre class="label">免許の
+条件等</pre><pre class="value"></pre>
+		</div>
+		<div id="grade">
+		  <span class="value">優良</span>
+		</div>
+		<div id="photo">
+		</div>
+		<div id="logo">
+		  <pre class="value">運
+転
+免
+許
+証</pre>
+		</div>
+		<div id="commission">
+		  <pre class="value"></pre>
+		</div>
+		<div id="signet">
+		  <pre class="value"></pre>
+		</div>
+	  </div>
+	</div>
+	<form id="form" action="#">
+	  <fieldset>
+		<legend>免許証ジェネレータ</legend>
+		<dl class="name">
+		  <dt>氏名</dt>
+		  <dd><input type="text" value="山田　太郎" /></dd>
+		</dl>
+		<dl class="birthdate">
+		  <dt>生年月日</dt>
+		  <dd><input type="text" value="昭和60年  8月 3 日生" /></dd>
+		</dl>
+		<dl class="address1">
+		  <dt>本籍</dt>
+		  <dd><input type="text" value="神奈川県鎌倉市小町2-14-7" /></dd>
+		</dl>
+		<dl class="address2">
+		  <dt>住所</dt>
+		  <dd><input type="text" value="神奈川県鎌倉市由比ガ浜4-10-20" /></dd>
+		</dl>
+		<dl class="issue">
+		  <dt>交付日</dt>
+		  <dd><input type="text" value="平成17年 01月 21日　99999" /></dd>
+		</dl>
+		<dl class="limitation">
+		  <dt>有効期限</dt>
+		  <dd><input type="text" value="平成22年09月03日まで有効" /></dd>
+		</dl>
+		<dl class="licensecode">
+		  <dt>免許証番号</dt>
+		  <dd><input type="text" value="999999999999" /></dd>
+		  <dd id="check_digit"></dd>
+		</dl>
+		<dl class="date1">
+		  <dt>取得日１</dt>
+		  <dd><input type="text" value="平成00年00月00日" /></dd>
+		</dl>
+		<dl class="date2">
+		  <dt>取得日２</dt>
+		  <dd><input type="text" value="平成17年01月21日" /></dd>
+		</dl>
+		<dl class="date3">
+		  <dt>取得日３</dt>
+		  <dd><input type="text" value="平成00年00月00日" /></dd>
+		</dl>
+		<dl class="commission">
+		  <dt>公安委員会</dt>
+		  <dd><input type="text" value="東京都公安委員会" /></dd>
+		</dl>
+		<dl class="condition">
+		  <dt>免許の条件等</dt>
+		  <dd>
+			<textarea>中型車は中型車(8t)に限る</textarea>
+		  </dd>
+		</dl>
+		<dl class="lic_class">
+		  <dt>種別</dt>
+		  <dd>
+			<table>
+			  <tbody>
+				<tr>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="中型" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				</tr>
+				<tr>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				  <td><input type="text" value="━" /></td>
+				</tr>
+			  </tbody>
+			</table>
+		  </dd>
+		</dl>
+		<dl class="color">
+		  <dt>色</dt>
+		  <dd>
+			<input type="radio" id="color_green" name="color" />
+			<label for="color_green">グリーン</label>
+		  </dd>
+		  <dd>
+			<input type="radio" id="color_blue" name="color" />
+			<label for="color_blue">ブルー</label>
+		  </dd>
+		  <dd>
+			<input type="radio" id="color_gold" name="color" checked="checked" />
+			<label for="color_gold">ゴールド</label>
+		  </dd>
+		</dl>
+		<dl class="grade">
+		  <dt>優良</dt>
+		  <dd><input type="checkbox" checked="checked" /></dd>
+		</dl>
+		<dl class="ic">
+		  <dt>ＩＣ</dt>
+		  <dd><input type="checkbox" checked="checked" /></dd>
+		</dl>
+	  </fieldset>
+	</form>
+  </body>
+</html>

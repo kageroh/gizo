@@ -1,0 +1,374 @@
+@charset 'utf-8';
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  white-space: nowrap;
+  font-size: 100%; }
+
+pre {
+  white-space: pre-wrap; }
+
+body {
+  color: black;
+  background-color: white;
+  padding: 1em; }
+
+/* ================ form ================ */
+@media print {
+  #form {
+    display: none; } }
+
+#form {
+  margin-top: 1em; }
+  #form fieldset {
+    padding: 1em; }
+  #form label {
+    cursor: pointer; }
+  #form dt,
+  #form dd {
+    display: inline-block; }
+  #form dt {
+    text-align: right;
+    width: 6em;
+    vertical-align: top; }
+  #form table input[type="text"] {
+    width: 2.5em; }
+  #form input[type="text"],
+  #form textarea {
+    width: 30em; }
+  #form textarea {
+    height: 4em; }
+
+/* ================ card ================ */
+#card {
+  padding: 3mm;
+  border-width: 0.1mm;
+  border-color: silver;
+  border-style: solid;
+  width: 85mm;
+  height: 54mm;
+  -moz-border-radius: 3mm;
+  -webkit-border-radius: 3mm;
+  border-radius: 3mm; }
+  #card * {
+    font-family: sans-serif;
+    border-width: 0.1mm;
+    border-color: transparent;
+    border-style: solid;
+    -moz-transform-origin: left;
+    -webkit-transform-origin: left;
+    -o-transform-origin: left;
+    transform-origin: left; }
+  #card span.label, #card span.value,
+  #card pre.label,
+  #card pre.value {
+    display: inline-block;
+    vertical-align: middle; }
+    #card span.label > em, #card span.value > em,
+    #card pre.label > em,
+    #card pre.value > em {
+      font-style: normal; }
+
+/* ================ box ================ */
+#box {
+  border-color: black;
+  position: relative;
+  width: 79.5mm;
+  height: 48mm;
+  -moz-border-radius: 2mm;
+  -webkit-border-radius: 2mm;
+  border-radius: 2mm; }
+  #box > * {
+    position: absolute; }
+
+/* ================ common ================ */
+#name,
+#birthdate,
+#address1,
+#address2,
+#issue {
+  border-color: transparent transparent black;
+  width: 79.5mm;
+  height: 4mm; }
+  #name > span.label,
+  #birthdate > span.label,
+  #address1 > span.label,
+  #address2 > span.label,
+  #issue > span.label {
+    font-size: 2mm;
+    padding: 1mm;
+    border-color: transparent black transparent transparent; }
+  #name > span.value,
+  #birthdate > span.value,
+  #address1 > span.value,
+  #address2 > span.value,
+  #issue > span.value {
+    font-size: 3mm; }
+
+#limitation,
+#condition,
+#licensecode,
+#date1,
+#date2,
+#date3 {
+  width: 50.5mm; }
+
+#licensecode > span.label,
+#date1 > span.label,
+#date2 > span.label,
+#date3 > span.label {
+  text-align: center;
+  font-size: 1.5mm;
+  width: 4.75mm; }
+  #licensecode > span.label > em,
+  #date1 > span.label > em,
+  #date2 > span.label > em,
+  #date3 > span.label > em {
+    padding-left: .5mm;
+    display: inline-block;
+    -moz-transform: scaleX(0.75);
+    -webkit-transform: scaleX(0.75);
+    -o-transform: scaleX(0.75);
+    transform: scaleX(0.75); }
+
+#birthdate > span.value > em,
+#issue > span.value > em,
+#date1 > span.value > em,
+#date2 > span.value > em,
+#date3 > span.value > em {
+  font-weight: bolder; }
+
+/* ================ birthdate ================ */
+#birthdate {
+  border-color: transparent transparent transparent black;
+  left: 50.5mm; }
+  #birthdate > span.value {
+    letter-spacing: 1mm;
+    font-size: 2.5mm;
+    padding-left: 1.5mm;
+    width: 29mm;
+    -moz-transform: scaleX(0.75);
+    -webkit-transform: scaleX(0.75);
+    -o-transform: scaleX(0.75);
+    transform: scaleX(0.75); }
+
+/* ================ address ================ */
+#address1 {
+  top: 4mm; }
+
+#address2 {
+  top: 8mm; }
+
+#address1 > span.value,
+#address2 > span.value {
+  padding-left: 2mm; }
+
+/* ================ issue ================ */
+#issue {
+  top: 11.5mm;
+  width: 54.5mm; }
+  #issue > span.value {
+    letter-spacing: .4mm;
+    font-size: 2.5mm;
+    padding-left: 4mm; }
+
+/* ================ limitation ================ */
+#limitation {
+  top: 15.5mm;
+  height: 5mm; }
+  #limitation > span.value {
+    letter-spacing: .7mm;
+    font-size: 4.5mm;
+    padding-left: 1.5mm;
+    -moz-transform: scaleX(0.75);
+    -webkit-transform: scaleX(0.75);
+    -o-transform: scaleX(0.75);
+    transform: scaleX(0.75); }
+
+/* ================ licensecode ================ */
+#licensecode {
+  top: 33.75mm;
+  height: 4.25mm; }
+  #licensecode > span.label {
+    letter-spacing: 1mm;
+    padding: 1mm 0 2mm .25mm;
+    border-color: transparent black transparent transparent; }
+  #licensecode > span.value {
+    letter-spacing: .7mm;
+    font-weight: bolder;
+    font-size: 3mm;
+    padding-left: 1.5mm;
+    vertical-align: top; }
+    #licensecode > span.value:before, #licensecode > span.value:after {
+      font-weight: normal;
+      font-size: 2mm; }
+    #licensecode > span.value:before {
+      content: '\7b2c';
+      margin-right: 4mm; }
+    #licensecode > span.value:after {
+      content: '\53f7';
+      margin-left: 3.5mm; }
+
+/* ================ date ================ */
+#date1,
+#date2,
+#date3 {
+  height: 3mm; }
+  #date1 > span.label,
+  #date2 > span.label,
+  #date3 > span.label {
+    padding: 1mm 0;
+    border-color: black black transparent transparent; }
+  #date1 > span.value,
+  #date2 > span.value,
+  #date3 > span.value {
+    letter-spacing: .7mm;
+    font-size: 2.5mm;
+    margin-left: 1mm;
+    vertical-align: top;
+    -moz-transform: scaleX(0.75);
+    -webkit-transform: scaleX(0.75);
+    -o-transform: scaleX(0.75);
+    transform: scaleX(0.75); }
+
+/* ================ date1 ================ */
+#date1 {
+  top: 38mm; }
+  #date1 > span {
+    min-height: 4mm; }
+  #date1 > span.label {
+    font-size: 1.25mm; }
+  #date1 > span.value {
+    padding-top: .4mm; }
+
+/* ================ date2 ================ */
+#date2 {
+  top: 41mm; }
+  #date2 > span.value {
+    padding-top: .5mm; }
+
+/* ================ date3 ================ */
+#date3 {
+  top: 44mm; }
+  #date3 > span.label {
+    letter-spacing: 1mm;
+    padding-left: .5mm; }
+  #date3 > span.value {
+    padding-top: .7mm; }
+
+/* ================ lic_class ================ */
+#lic_class {
+  top: 38mm;
+  left: 28.25mm; }
+  #lic_class > table {
+    border-color: black transparent transparent black;
+    border-spacing: 0; }
+  #lic_class th,
+  #lic_class td {
+    font-size: 1.75mm;
+    border-color: transparent black black transparent;
+    width: 2.5mm; }
+  #lic_class th {
+    font-weight: normal; }
+  #lic_class td {
+    text-align: center;
+    font-weight: bolder;
+    height: 4.5mm; }
+
+/* ================ condition ================ */
+#condition {
+  top: 21mm;
+  left: 1mm;
+  height: 13mm; }
+  #condition > pre.label {
+    font-size: 1.5mm;
+    width: 8.5mm;
+    line-height: 2.5mm; }
+  #condition > pre.value {
+    font-size: 3mm;
+    vertical-align: top;
+    -moz-transform: scaleX(0.75);
+    -webkit-transform: scaleX(0.75);
+    -o-transform: scaleX(0.75);
+    transform: scaleX(0.75); }
+
+/* ================ grade ================ */
+#grade {
+  text-align: center;
+  border-width: .5mm;
+  border-color: black;
+  bottom: 15mm;
+  left: 1.5mm;
+  width: 7.5mm;
+  height: 5.5mm;
+  -moz-border-radius: 1mm;
+  -webkit-border-radius: 1mm;
+  border-radius: 1mm; }
+  #grade > span.value {
+    font-size: 3mm; }
+
+/* ================ photo ================ */
+#photo {
+  background-color: #5c8bc6;
+  top: 12.25mm;
+  right: .25mm;
+  width: 23.5mm;
+  height: 29.5mm; }
+
+/* ================ logo ================ */
+#logo {
+  color: #2db9ca;
+  top: 18.5mm;
+  left: 51.5mm; }
+  #logo > pre.value {
+    font-weight: bolder;
+    font-size: 3mm;
+    line-height: 4.5mm; }
+
+/* ================ commission ================ */
+#commission {
+  right: 13mm;
+  bottom: 1mm; }
+  #commission > pre.value {
+    text-align: center;
+    color: #d92d0b;
+    font-size: 1.75mm;
+    line-height: 2mm; }
+
+/* ================ signet ================ */
+#signet {
+  text-align: center;
+  color: #e4501c;
+  border-color: #e4501c;
+  right: 2mm;
+  bottom: 1mm;
+  width: 4.25mm;
+  height: 4.25mm;
+  -moz-border-radius: 0.5mm;
+  -webkit-border-radius: 0.5mm;
+  border-radius: 0.5mm; }
+  #signet > pre.value {
+    font-family: serif;
+    font-size: 1.25mm;
+    line-height: 1.4mm; }
+
+/* ================ stripe ================ */
+#licensecode > span.value > em,
+#lic_class td {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAg0lEQVR4XuWSywqAIBAA/f+fCiLqZupKQsced8GibuZmFkWh98DDiMMysBJr7dqPOq8cGAYTNAhUvIBUZOkGnRV459LUAqGGJzBwxwHReXmo1BsiqE/A2YkqAuUkYpzgSyZQcfVWwiCqhhLKk9SjRP6mBMLDN3B5lbiP5pf/Dvv4WbUbaS9juPRT69EAAAAASUVORK5CYII="); }
+
+/* ================ non-ic ================ */
+#card.non-ic #date1 > span.value,
+#card.non-ic #date2 > span.value,
+#card.non-ic #date3 > span.value {
+  padding-left: 1.25mm; }
+#card.non-ic #lic_class {
+  padding-left: 2.5mm; }
+  #card.non-ic #lic_class td:last-child {
+    display: none; }

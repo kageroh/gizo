@@ -1,0 +1,491 @@
+@charset 'utf-8';
+
+@import 'common';
+
+$color: black;
+$scaleX: .75;
+$width: 79.5mm;
+$height: 4mm;
+$border-width: .1mm;
+$letter-spacing: 1mm;
+$signet_color: #e4501c;
+
+* {
+  white-space: nowrap;
+  font-size: 100%;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+body {
+  color: $color;
+  background-color: white;
+  padding: 1em;
+}
+
+/* ================ form ================ */
+
+@media print {
+  #form {
+	display: none;
+  }
+}
+
+#form {
+  margin-top: 1em;
+
+  fieldset {
+	padding: 1em;
+  }
+
+  label {
+	cursor: pointer;
+  }
+
+  dt,
+  dd {
+	display: inline-block;
+  }
+
+  dt {
+	text-align: right;
+	width: 6em;
+	vertical-align: top;
+  }
+
+  table {
+	input[type="text"] {
+	  width: 2.5em;
+	}
+  }
+
+  input[type="text"],
+  textarea {
+	width: 30em;
+  }
+
+  textarea {
+	height: 4em;
+  }
+}
+
+/* ================ card ================ */
+
+#card {
+  padding: 3mm;
+  border-width: $border-width;
+  border-color: silver;
+  border-style: solid;
+  width: 85mm;
+  height: 54mm;
+  @include border-radius(3mm);
+
+  * {
+	font-family: sans-serif;
+	border-width: $border-width;
+	border-color: transparent;
+	border-style: solid;
+	@include transform-origin(left);
+  }
+
+  span,
+  pre {
+	&.label,
+	&.value {
+	  display: inline-block;
+	  vertical-align: middle;
+
+	  & > em {
+		font-style: normal;
+	  }
+	}
+  }
+}
+
+/* ================ box ================ */
+
+#box {
+  border-color: $color;
+  position: relative;
+  width: $width;
+  height: 48mm;
+  @include border-radius(2mm);
+
+  & > * {
+	position: absolute;
+  }
+}
+
+/* ================ common ================ */
+
+#name,
+#birthdate,
+#address1,
+#address2,
+#issue {
+  border-color: transparent transparent $color;
+  width: $width;
+  height: $height;
+
+  & > span.label {
+	font-size: 2mm;
+	padding: 1mm;
+	border-color: transparent $color transparent transparent;
+  }
+
+  & > span.value {
+	font-size: 3mm;
+  }
+}
+
+#limitation,
+#condition,
+#licensecode,
+#date1,
+#date2,
+#date3 {
+  width: 50.5mm;
+}
+
+#licensecode,
+#date1,
+#date2,
+#date3 {
+  & > span.label {
+	text-align: center;
+	font-size: 1.5mm;
+	width: 4.75mm;
+
+	& > em {
+	  padding-left: .5mm;
+	  display: inline-block;
+	  @include transform(scaleX($scaleX));
+	}
+  }
+}
+
+#birthdate,
+#issue,
+#date1,
+#date2,
+#date3 {
+  & > span.value {
+	& > em {
+	  font-weight: bolder;
+	}
+  }
+}
+
+/* ================ birthdate ================ */
+
+#birthdate {
+  border-color: transparent transparent transparent $color;
+  left: 50.5mm;
+
+  & > span.value {
+	letter-spacing: 1mm;
+	font-size: 2.5mm;
+	padding-left: 1.5mm;
+	width: 29mm;
+	@include transform(scaleX($scaleX));
+  }
+}
+
+/* ================ address ================ */
+
+#address1 {
+  top: $height;
+}
+
+#address2 {
+  top: $height * 2;
+}
+
+#address1,
+#address2 {
+  & > span.value {
+	padding-left: 2mm;
+  }
+}
+
+/* ================ issue ================ */
+
+#issue {
+  top: $height * 2 + 3.5mm;
+  width: 54.5mm;
+
+  & > span.value {
+	letter-spacing: .4mm;
+	font-size: 2.5mm;
+	padding-left: 4mm;
+  }
+}
+
+/* ================ limitation ================ */
+
+#limitation {
+  top: 15.5mm;
+  height: 5mm;
+
+  & > span.value {
+	letter-spacing: .7mm;
+	font-size: 4.5mm;
+	padding-left: 1.5mm;
+	@include transform(scaleX($scaleX));
+  }
+}
+
+/* ================ licensecode ================ */
+
+#licensecode {
+  top: 33.75mm;
+  height: 4.25mm;
+
+  & > span.label {
+	letter-spacing: $letter-spacing;
+	padding: 1mm 0 2mm .25mm;
+	border-color: transparent $color transparent transparent;
+  }
+
+  & > span.value {
+	letter-spacing: .7mm;
+	font-weight: bolder;
+	font-size: 3mm;
+	padding-left: 1.5mm;
+	vertical-align: top;
+
+	&:before,
+	&:after {
+	  font-weight: normal;
+	  font-size: 2mm;
+	}
+
+	&:before {
+	  content: '\7b2c';
+	  margin-right: 4mm;
+	}
+
+	&:after {
+	  content: '\53f7';
+	  margin-left: 3.5mm;
+	}
+  }
+}
+
+/* ================ date ================ */
+
+#date1,
+#date2,
+#date3 {
+  height: 3mm;
+
+  & > span.label {
+	padding: 1mm 0;
+	border-color: $color $color transparent transparent;
+  }
+
+  & > span.value {
+	letter-spacing: .7mm;
+	font-size: 2.5mm;
+	margin-left: 1mm;
+	vertical-align: top;
+	@include transform(scaleX($scaleX));
+  }
+}
+
+/* ================ date1 ================ */
+
+#date1 {
+  top: 38mm;
+
+  & > span {
+	min-height: 4mm;
+  }
+
+  & > span.label {
+	font-size: 1.25mm;
+  }
+
+  & > span.value {
+	padding-top: .4mm;
+  }
+}
+
+/* ================ date2 ================ */
+
+#date2 {
+  top: 41mm;
+
+  & > span.value {
+	padding-top: .5mm;
+  }
+}
+
+/* ================ date3 ================ */
+
+#date3 {
+  top: 44mm;
+
+  & > span.label {
+	letter-spacing: $letter-spacing;
+	padding-left: .5mm;
+  }
+
+  & > span.value {
+	padding-top: .7mm;
+  }
+}
+
+/* ================ lic_class ================ */
+
+#lic_class {
+  top: 38mm;
+  left: 28.25mm;
+
+  & > table {
+	border-color: $color transparent transparent $color;
+	border-spacing: 0;
+  }
+
+  th,
+  td {
+	font-size: 1.75mm;
+	border-color: transparent $color $color transparent;
+	width: 2.5mm;
+  }
+
+  th {
+	font-weight: normal;
+  }
+
+  td {
+	text-align: center;
+	font-weight: bolder;
+	height: 4.5mm;
+  }
+}
+
+/* ================ condition ================ */
+
+#condition {
+  top: 21mm;
+  left: 1mm;
+  height: 13mm;
+
+  & > pre.label {
+	font-size: 1.5mm;
+	width: 8.5mm;
+	line-height: 2.5mm;
+  }
+
+  & > pre.value {
+	font-size: 3mm;
+	vertical-align: top;
+	@include transform(scaleX($scaleX));
+  }
+}
+
+/* ================ grade ================ */
+
+#grade {
+  text-align: center;
+  border-width: .5mm;
+  border-color: $color;
+  bottom: 15mm;
+  left: 1.5mm;
+  width: 7.5mm;
+  height: 5.5mm;
+  @include border-radius(1mm);
+
+  & > span.value {
+	font-size: 3mm;
+  }
+}
+
+/* ================ photo ================ */
+
+#photo {
+  background-color: #5c8bc6;
+  top: 12.25mm;
+  right: .25mm;
+  width: 23.5mm;
+  height: 29.5mm;
+}
+
+/* ================ logo ================ */
+
+#logo {
+  color: #2db9ca;
+  top: 18.5mm;
+  left: 51.5mm;
+
+  & > pre.value {
+	font-weight: bolder;
+	font-size: 3mm;
+	line-height: 4.5mm;
+  }
+}
+
+/* ================ commission ================ */
+
+#commission {
+  right: 13mm;
+  bottom: 1mm;
+
+  & > pre.value {
+	text-align: center;
+	color: #d92d0b;
+	font-size: 1.75mm;
+	line-height: 2mm;
+  }
+}
+
+/* ================ signet ================ */
+
+#signet {
+  text-align: center;
+  color: $signet_color;
+  border-color: $signet_color;
+  right: 2mm;
+  bottom: 1mm;
+  width: 4.25mm;
+  height: 4.25mm;
+  @include border-radius(.5mm);
+
+  & > pre.value {
+	font-family: serif;
+	font-size: 1.25mm;
+	line-height: 1.4mm;
+  }
+}
+
+/* ================ stripe ================ */
+
+#licensecode > span.value > em,
+#lic_class td {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAg0lEQVR4XuWSywqAIBAA/f+fCiLqZupKQsced8GibuZmFkWh98DDiMMysBJr7dqPOq8cGAYTNAhUvIBUZOkGnRV459LUAqGGJzBwxwHReXmo1BsiqE/A2YkqAuUkYpzgSyZQcfVWwiCqhhLKk9SjRP6mBMLDN3B5lbiP5pf/Dvv4WbUbaS9juPRT69EAAAAASUVORK5CYII=');
+}
+
+/* ================ non-ic ================ */
+
+#card.non-ic {
+	$padding: 2.5mm;
+
+	#date1,
+	#date2,
+	#date3 {
+		& > span.value {
+			padding-left: $padding / 2;
+		}
+	}
+
+	#lic_class {
+		padding-left: $padding;
+
+		td:last-child {
+			display: none;
+		}
+	}
+}
