@@ -3,11 +3,13 @@
 @import 'common';
 
 $color: black;
-$scaleX: .75;
-$width: 79.5mm;
-$height: 4mm;
-$border-width: .1mm;
 $letter-spacing: 1mm;
+$border-width: .1mm;
+$padding: 2.5mm;
+$height: 4mm;
+$scaleX: .75;
+$card_width: 79.5mm;
+$card_height: 54mm;
 $signet_color: #e4501c;
 
 * {
@@ -79,7 +81,7 @@ body {
   border-color: silver;
   border-style: solid;
   width: 85mm;
-  height: 54mm;
+  height: $card_height;
   @include border-radius(3mm);
 
   * {
@@ -109,13 +111,13 @@ body {
 #box {
   border-color: $color;
   position: relative;
-  width: $width;
+  width: $card_width;
   height: 48mm;
   @include border-radius(2mm);
 
-  & > * {
-	position: absolute;
-  }
+	& > * {
+	  position: absolute;
+	}
 }
 
 /* ================ common ================ */
@@ -126,7 +128,7 @@ body {
 #address2,
 #issue {
   border-color: transparent transparent $color;
-  width: $width;
+  width: $card_width;
   height: $height;
 
   & > span.label {
@@ -471,8 +473,6 @@ body {
 /* ================ non-ic ================ */
 
 #card.non-ic {
-	$padding: 2.5mm;
-
 	#date1,
 	#date2,
 	#date3 {
@@ -488,4 +488,38 @@ body {
 			display: none;
 		}
 	}
+}
+
+/* ================ non-address ================ */
+
+#card.non-address {
+	#box {
+		border-color: transparent;
+	}
+
+	#name {
+		border-color: transparent;
+	}
+
+	#address1 {
+		display: none;
+	}
+
+		#border1,
+		#border2 {
+			border-width: $border-width;
+			border-color: $color;
+			border-style: solid;
+			width: $card_width;
+			@include border-radius(2mm);
+		}
+
+		#border1 {
+			height: $height;
+		}
+
+		#border2 {
+			top: $height * 2;
+			bottom: 0;
+		}
 }

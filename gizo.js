@@ -22,12 +22,25 @@ jQuery(function($) {
 	})();
 	name_i.keyup(set.name);
 
-	var address1_i = $('#form .address1 input');
+	var address1_i = $('#form .address1 input[type="text"]');
 	var address1_o = $('#address1 .value');
 	set.address1 = function() {
 		address1_o.text(address1_i.val());
 	};
 	address1_i.keyup(set.address1);
+
+	var addressable_i = $('#form .address1 input[type="checkbox"]');
+	set.addressable = (function() {
+		var className = 'non-address';
+		return function() {
+			if (addressable_i[0].checked) {
+				card.removeClass(className);
+			} else {
+				card.addClass(className);
+			}
+		};
+	})();
+	addressable_i.change(set.addressable);
 
 	var address2_i = $('#form .address2 input');
 	var address2_o = $('#address2 .value');

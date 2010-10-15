@@ -372,3 +372,25 @@ body {
   padding-left: 2.5mm; }
   #card.non-ic #lic_class td:last-child {
     display: none; }
+
+/* ================ non-address ================ */
+#card.non-address #box {
+  border-color: transparent; }
+#card.non-address #name {
+  border-color: transparent; }
+#card.non-address #address1 {
+  display: none; }
+#card.non-address #border1,
+#card.non-address #border2 {
+  border-width: 0.1mm;
+  border-color: black;
+  border-style: solid;
+  width: 79.5mm;
+  -moz-border-radius: 2mm;
+  -webkit-border-radius: 2mm;
+  border-radius: 2mm; }
+#card.non-address #border1 {
+  height: 4mm; }
+#card.non-address #border2 {
+  top: 8mm;
+  bottom: 0; }
