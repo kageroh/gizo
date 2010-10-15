@@ -87,6 +87,34 @@ body {
   #box > * {
     position: absolute; }
 
+/* ================ border ================ */
+#border_label_0,
+#border_label_1,
+#border_label_2,
+#border_label_3 {
+  border-color: transparent transparent transparent black; }
+
+#border_label_0,
+#border_label_1,
+#border_label_2 {
+  left: 6.75mm; }
+
+#border_label_0,
+#border_label_1 {
+  height: 4mm; }
+
+#border_label_1 {
+  top: 4mm; }
+
+#border_label_2 {
+  top: 8mm;
+  height: 7.5mm; }
+
+#border_label_3 {
+  top: 33.75mm;
+  left: 4.75mm;
+  height: 14.25mm; }
+
 /* ================ common ================ */
 #name,
 #birthdate,
@@ -102,8 +130,7 @@ body {
   #address2 > span.label,
   #issue > span.label {
     font-size: 2mm;
-    padding: 1mm;
-    border-color: transparent black transparent transparent; }
+    padding: 1mm; }
   #name > span.value,
   #birthdate > span.value,
   #address1 > span.value,
@@ -149,7 +176,7 @@ body {
   border-color: transparent transparent transparent black;
   left: 50.5mm; }
   #birthdate > span.value {
-    letter-spacing: 1mm;
+    letter-spacing: .9mm;
     font-size: 2.5mm;
     padding-left: 1.5mm;
     width: 29mm;
@@ -197,8 +224,7 @@ body {
   height: 4.25mm; }
   #licensecode > span.label {
     letter-spacing: 1mm;
-    padding: 1mm 0 2mm .25mm;
-    border-color: transparent black transparent transparent; }
+    padding: 1mm 0 2mm .25mm; }
   #licensecode > span.value {
     letter-spacing: .7mm;
     font-weight: bolder;
@@ -224,7 +250,7 @@ body {
   #date2 > span.label,
   #date3 > span.label {
     padding: 1mm 0;
-    border-color: black black transparent transparent; }
+    border-color: black transparent transparent transparent; }
   #date1 > span.value,
   #date2 > span.value,
   #date3 > span.value {
@@ -355,7 +381,7 @@ body {
   border-radius: 0.5mm; }
   #signet > pre.value {
     font-family: serif;
-    font-size: 1.25mm;
+    font-size: 1.2mm;
     line-height: 1.4mm; }
 
 /* ================ stripe ================ */
@@ -378,19 +404,18 @@ body {
   border-color: transparent; }
 #card.non-address #name {
   border-color: transparent; }
-#card.non-address #address1 {
+#card.non-address #address1,
+#card.non-address #border_label_1 {
   display: none; }
-#card.non-address #border1,
-#card.non-address #border2 {
-  border-width: 0.1mm;
+#card.non-address #border_head,
+#card.non-address #border_body {
   border-color: black;
-  border-style: solid;
   width: 79.5mm;
   -moz-border-radius: 2mm;
   -webkit-border-radius: 2mm;
   border-radius: 2mm; }
-#card.non-address #border1 {
+#card.non-address #border_head {
   height: 4mm; }
-#card.non-address #border2 {
+#card.non-address #border_body {
   top: 8mm;
   bottom: 0; }

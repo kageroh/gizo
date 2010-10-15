@@ -6,10 +6,17 @@ $color: black;
 $letter-spacing: 1mm;
 $border-width: .1mm;
 $padding: 2.5mm;
-$height: 4mm;
 $scaleX: .75;
 $card_width: 79.5mm;
 $card_height: 54mm;
+$label_0_width: 4.75mm;
+$label_0_padding: 1mm;
+$name_height: 4mm;
+$issue_height: 3.5mm;
+$licensecode_top: 33.75mm;
+$licensecode_height: 4.25mm;
+$date1_top: 38mm;
+$date1_height: 3mm;
 $signet_color: #e4501c;
 
 * {
@@ -120,6 +127,41 @@ body {
   }
 }
 
+/* ================ border ================ */
+
+#border_label_0,
+#border_label_1,
+#border_label_2,
+#border_label_3 {
+	border-color: transparent transparent transparent $color;
+}
+
+#border_label_0,
+#border_label_1,
+#border_label_2 {
+	left: $label_0_width + $label_0_padding * 2;
+}
+
+#border_label_0,
+#border_label_1 {
+	height: $name_height;
+}
+
+#border_label_1 {
+	top: $name_height;
+}
+
+#border_label_2 {
+	top: $name_height * 2;
+	height: $name_height + $issue_height;
+}
+
+#border_label_3 {
+	top: $licensecode_top;
+	left: $label_0_width;
+	height: $licensecode_height + $date1_height * 3 + 1;
+}
+
 /* ================ common ================ */
 
 #name,
@@ -129,12 +171,11 @@ body {
 #issue {
   border-color: transparent transparent $color;
   width: $card_width;
-  height: $height;
+  height: $name_height;
 
   & > span.label {
 	font-size: 2mm;
-	padding: 1mm;
-	border-color: transparent $color transparent transparent;
+	padding: $label_0_padding;
   }
 
   & > span.value {
@@ -158,7 +199,7 @@ body {
   & > span.label {
 	text-align: center;
 	font-size: 1.5mm;
-	width: 4.75mm;
+	width: $label_0_width;
 
 	& > em {
 	  padding-left: .5mm;
@@ -187,7 +228,7 @@ body {
   left: 50.5mm;
 
   & > span.value {
-	letter-spacing: 1mm;
+	letter-spacing: .9mm;
 	font-size: 2.5mm;
 	padding-left: 1.5mm;
 	width: 29mm;
@@ -198,11 +239,11 @@ body {
 /* ================ address ================ */
 
 #address1 {
-  top: $height;
+  top: $name_height;
 }
 
 #address2 {
-  top: $height * 2;
+  top: $name_height * 2;
 }
 
 #address1,
@@ -215,7 +256,7 @@ body {
 /* ================ issue ================ */
 
 #issue {
-  top: $height * 2 + 3.5mm;
+  top: $name_height * 2 + $issue_height;
   width: 54.5mm;
 
   & > span.value {
@@ -242,13 +283,12 @@ body {
 /* ================ licensecode ================ */
 
 #licensecode {
-  top: 33.75mm;
-  height: 4.25mm;
+  top: $licensecode_top;
+  height: $licensecode_height;
 
   & > span.label {
 	letter-spacing: $letter-spacing;
 	padding: 1mm 0 2mm .25mm;
-	border-color: transparent $color transparent transparent;
   }
 
   & > span.value {
@@ -281,11 +321,11 @@ body {
 #date1,
 #date2,
 #date3 {
-  height: 3mm;
+  height: $date1_height;
 
   & > span.label {
 	padding: 1mm 0;
-	border-color: $color $color transparent transparent;
+	border-color: $color transparent transparent transparent;
   }
 
   & > span.value {
@@ -300,7 +340,7 @@ body {
 /* ================ date1 ================ */
 
 #date1 {
-  top: 38mm;
+  top: $date1_top;
 
   & > span {
 	min-height: 4mm;
@@ -318,7 +358,7 @@ body {
 /* ================ date2 ================ */
 
 #date2 {
-  top: 41mm;
+  top: $date1_top + $date1_height;
 
   & > span.value {
 	padding-top: .5mm;
@@ -328,7 +368,7 @@ body {
 /* ================ date3 ================ */
 
 #date3 {
-  top: 44mm;
+  top: $date1_top + $date1_height * 2;
 
   & > span.label {
 	letter-spacing: $letter-spacing;
@@ -343,7 +383,7 @@ body {
 /* ================ lic_class ================ */
 
 #lic_class {
-  top: 38mm;
+  top: $date1_top;
   left: 28.25mm;
 
   & > table {
@@ -458,7 +498,7 @@ body {
 
   & > pre.value {
 	font-family: serif;
-	font-size: 1.25mm;
+	font-size: 1.2mm;
 	line-height: 1.4mm;
   }
 }
@@ -501,25 +541,24 @@ body {
 	border-color: transparent;
   }
 
-  #address1 {
+  #address1,
+  #border_label_1 {
 	display: none;
   }
 
-  #border1,
-  #border2 {
-	border-width: $border-width;
+  #border_head,
+  #border_body {
 	border-color: $color;
-	border-style: solid;
 	width: $card_width;
 	@include border-radius(2mm);
   }
 
-  #border1 {
-	height: $height;
+  #border_head {
+	height: $name_height;
   }
 
-  #border2 {
-	top: $height * 2;
+  #border_body {
+	top: $name_height * 2;
 	bottom: 0;
   }
 }
