@@ -3,6 +3,7 @@
 @import 'common';
 
 $color: black;
+$background-color: white;
 $letter-spacing: 1mm;
 $border-width: .1mm;
 $padding: 2.5mm;
@@ -13,7 +14,6 @@ $label_0_width: 4.75mm;
 $label_0_padding: 1mm;
 $name_height: 4mm;
 $issue_height: 3.5mm;
-$licensecode_top: 33.75mm;
 $licensecode_height: 4.25mm;
 $date1_top: 38mm;
 $date1_height: 3mm;
@@ -30,7 +30,7 @@ pre {
 
 body {
   color: $color;
-  background-color: white;
+  background-color: $background-color;
   padding: 1em;
 }
 
@@ -129,37 +129,20 @@ body {
 
 /* ================ border ================ */
 
-#border_label_0,
-#border_label_1,
-#border_label_2,
-#border_label_3 {
+#border_label_head,
+#border_label_foot {
   border-color: transparent transparent transparent $color;
 }
 
-#border_label_0,
-#border_label_1,
-#border_label_2 {
+#border_label_head {
   left: $label_0_width + $label_0_padding * 2;
+  height: $name_height * 3 + $issue_height;
 }
 
-#border_label_0,
-#border_label_1 {
-  height: $name_height;
-}
-
-#border_label_1 {
-  top: $name_height;
-}
-
-#border_label_2 {
-  top: $name_height * 2;
-  height: $name_height + $issue_height;
-}
-
-#border_label_3 {
-  top: $licensecode_top;
+#border_label_foot {
   left: $label_0_width;
-  height: $licensecode_height + $date1_height * 3 + 1;
+  bottom: 0;
+  height: $licensecode_height + $date1_height * 3 + .5;
 }
 
 /* ================ common ================ */
@@ -283,7 +266,7 @@ body {
 /* ================ licensecode ================ */
 
 #licensecode {
-  top: $licensecode_top;
+  top: 33.75mm;
   height: $licensecode_height;
 
   & > span.label {
@@ -541,9 +524,10 @@ body {
 	border-color: transparent;
   }
 
-  #address1,
-  #border_label_1 {
-	display: none;
+  #address1 {
+	color: $background-color;
+	background-color: $background-color;
+	border-color: transparent;
   }
 
   #border_head,

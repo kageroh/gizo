@@ -88,32 +88,18 @@ body {
     position: absolute; }
 
 /* ================ border ================ */
-#border_label_0,
-#border_label_1,
-#border_label_2,
-#border_label_3 {
+#border_label_head,
+#border_label_foot {
   border-color: transparent transparent transparent black; }
 
-#border_label_0,
-#border_label_1,
-#border_label_2 {
-  left: 6.75mm; }
+#border_label_head {
+  left: 6.75mm;
+  height: 15.5mm; }
 
-#border_label_0,
-#border_label_1 {
-  height: 4mm; }
-
-#border_label_1 {
-  top: 4mm; }
-
-#border_label_2 {
-  top: 8mm;
-  height: 7.5mm; }
-
-#border_label_3 {
-  top: 33.75mm;
+#border_label_foot {
   left: 4.75mm;
-  height: 14.25mm; }
+  bottom: 0;
+  height: 13.75mm; }
 
 /* ================ common ================ */
 #name,
@@ -404,9 +390,10 @@ body {
   border-color: transparent; }
 #card.non-address #name {
   border-color: transparent; }
-#card.non-address #address1,
-#card.non-address #border_label_1 {
-  display: none; }
+#card.non-address #address1 {
+  color: white;
+  background-color: white;
+  border-color: transparent; }
 #card.non-address #border_head,
 #card.non-address #border_body {
   border-color: black;
