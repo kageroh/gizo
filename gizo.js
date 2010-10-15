@@ -176,10 +176,10 @@ jQuery(function($) {
 	color_i.push( $( '#color_green' ) );
 	color_i.push( $( '#color_blue'  ) );
 	color_i.push( $( '#color_gold'  ) );
-	set.color_text = function() {
+	var color_text = function() {
 		color_o.css({ 'background-color': this.value });
 	};
-	color_i[0].keyup(set.color_text);
+	color_i[0].keyup(color_text);
 	fb.mouseup  ( function() { color_i[0].keyup(); });
 	fb.mousemove( function() { color_i[0].keyup(); });
 	set.color_radio = function() {
