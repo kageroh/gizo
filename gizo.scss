@@ -115,9 +115,9 @@ body {
   height: 48mm;
   @include border-radius(2mm);
 
-	& > * {
-	  position: absolute;
-	}
+  & > * {
+	position: absolute;
+  }
 }
 
 /* ================ common ================ */
@@ -473,53 +473,53 @@ body {
 /* ================ non-ic ================ */
 
 #card.non-ic {
-	#date1,
-	#date2,
-	#date3 {
-		& > span.value {
-			padding-left: $padding / 2;
-		}
+  #date1,
+  #date2,
+  #date3 {
+	& > span.value {
+	  padding-left: $padding / 2;
 	}
+  }
 
-	#lic_class {
-		padding-left: $padding;
+  #lic_class {
+	padding-left: $padding;
 
-		td:last-child {
-			display: none;
-		}
+	td:last-child {
+	  display: none;
 	}
+  }
 }
 
 /* ================ non-address ================ */
 
 #card.non-address {
-	#box {
-		border-color: transparent;
-	}
+  #box {
+	border-color: transparent;
+  }
 
-	#name {
-		border-color: transparent;
-	}
+  #name {
+	border-color: transparent;
+  }
 
-	#address1 {
-		display: none;
-	}
+  #address1 {
+	display: none;
+  }
 
-		#border1,
-		#border2 {
-			border-width: $border-width;
-			border-color: $color;
-			border-style: solid;
-			width: $card_width;
-			@include border-radius(2mm);
-		}
+  #border1,
+  #border2 {
+	border-width: $border-width;
+	border-color: $color;
+	border-style: solid;
+	width: $card_width;
+	@include border-radius(2mm);
+  }
 
-		#border1 {
-			height: $height;
-		}
+  #border1 {
+	height: $height;
+  }
 
-		#border2 {
-			top: $height * 2;
-			bottom: 0;
-		}
+  #border2 {
+	top: $height * 2;
+	bottom: 0;
+  }
 }
