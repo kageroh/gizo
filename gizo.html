@@ -3,8 +3,10 @@
   <head>
 	<meta charset="utf-8" />
 	<title>免許証ジェネレータ</title>
+	<link rel="stylesheet" href="farbtastic.css" />
 	<link rel="stylesheet" href="gizo.css" />
 	<script src="jquery-1.4.2.min.js"></script>
+	<script src="farbtastic.js"></script>
 	<script src="gizo.js"></script>
   </head>
   <body>
@@ -178,6 +180,14 @@
 			</table>
 		  </dd>
 		</dl>
+		<dl class="grade">
+		  <dt>優良</dt>
+		  <dd><input type="checkbox" checked="checked" /></dd>
+		</dl>
+		<dl class="ic">
+		  <dt>ＩＣ</dt>
+		  <dd><input type="checkbox" checked="checked" /></dd>
+		</dl>
 		<dl class="color">
 		  <dt>色</dt>
 		  <dd>
@@ -192,14 +202,10 @@
 			<input type="radio" id="color_gold" name="color" checked="checked" />
 			<label for="color_gold">ゴールド</label>
 		  </dd>
-		</dl>
-		<dl class="grade">
-		  <dt>優良</dt>
-		  <dd><input type="checkbox" checked="checked" /></dd>
-		</dl>
-		<dl class="ic">
-		  <dt>ＩＣ</dt>
-		  <dd><input type="checkbox" checked="checked" /></dd>
+		  <dd>
+			<input type="text" id="color" />
+			<div id="colorpicker"></div>
+		  </dd>
 		</dl>
 	  </fieldset>
 	</form>

@@ -1,4 +1,6 @@
 jQuery(function($) {
+	var fb = $('#colorpicker').farbtastic('#color');
+
 	var set = {};
 	var card = $('#card');
 
@@ -170,20 +172,27 @@ jQuery(function($) {
 
 	var color_i = [];
 	var color_o = $('#limitation');
+	color_i.push( $( '#color'       ) );
 	color_i.push( $( '#color_green' ) );
 	color_i.push( $( '#color_blue'  ) );
 	color_i.push( $( '#color_gold'  ) );
-	set.color = function() {
+	set.color_text = function() {
+		color_o.css({ 'background-color': this.value });
+	};
+	color_i[0].keyup(set.color_text);
+	fb.mouseup  ( function() { color_i[0].keyup(); });
+	fb.mousemove( function() { color_i[0].keyup(); });
+	set.color_radio = function() {
 		var color;
 		switch (true) {
-		  case color_i[0][0].checked: color = '#85cb28' ; break;
-		  case color_i[1][0].checked: color = '#50bce7' ; break;
-		  case color_i[2][0].checked: color = '#8f7b62' ; break;
+		  case color_i[1][0].checked: color = '#85cb28' ; break;
+		  case color_i[2][0].checked: color = '#50bce7' ; break;
+		  case color_i[3][0].checked: color = '#8f7b62' ; break;
 		}
-		color_o.css({ 'background-color': color });
+		color_i[0].val(color).keyup();
 	};
-	for (var c, i = 0; c = color_i[i]; i++) {
-		c.change(set.color);
+	for (var c, i = 1; c = color_i[i]; i++) {
+		c.change(set.color_radio);
 	}
 
 	var grade_i = $('#form .grade input');
