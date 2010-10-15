@@ -133,33 +133,33 @@ body {
 #border_label_1,
 #border_label_2,
 #border_label_3 {
-	border-color: transparent transparent transparent $color;
+  border-color: transparent transparent transparent $color;
 }
 
 #border_label_0,
 #border_label_1,
 #border_label_2 {
-	left: $label_0_width + $label_0_padding * 2;
+  left: $label_0_width + $label_0_padding * 2;
 }
 
 #border_label_0,
 #border_label_1 {
-	height: $name_height;
+  height: $name_height;
 }
 
 #border_label_1 {
-	top: $name_height;
+  top: $name_height;
 }
 
 #border_label_2 {
-	top: $name_height * 2;
-	height: $name_height + $issue_height;
+  top: $name_height * 2;
+  height: $name_height + $issue_height;
 }
 
 #border_label_3 {
-	top: $licensecode_top;
-	left: $label_0_width;
-	height: $licensecode_height + $date1_height * 3 + 1;
+  top: $licensecode_top;
+  left: $label_0_width;
+  height: $licensecode_height + $date1_height * 3 + 1;
 }
 
 /* ================ common ================ */
