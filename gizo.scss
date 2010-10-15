@@ -92,7 +92,7 @@ body {
   @include border-radius(3mm);
 
   * {
-	font-family: sans-serif;
+	font-family: 'Microsoft Sans Serif', sans-serif;
 	border-width: $border-width;
 	border-color: transparent;
 	border-style: solid;

@@ -57,7 +57,7 @@ body {
   -webkit-border-radius: 3mm;
   border-radius: 3mm; }
   #card * {
-    font-family: sans-serif;
+    font-family: 'Microsoft Sans Serif', sans-serif;
     border-width: 0.1mm;
     border-color: transparent;
     border-style: solid;
