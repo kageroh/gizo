@@ -94,9 +94,9 @@ jQuery(function($) {
 	licensecode_i.keyup(set.licensecode);
 
 	var replace = (function() {
-		var re = /^([一-龠]{2}(?: \d|0\d|\d{2}))(年)( ?(?: \d|0\d|\d{2}) ?)(月)( ?(?: \d|0\d|\d{2}) ?)(日(?:生|　\d+)?)$/;
+		var re = /^([一-龠]{2}(?: \d|0\d|\d{2}))(年)( ?(?: \d|0\d|\d{2}) ?)(月)( ?(?: \d|0\d|\d{2}) ?)(日)(生)?(　\d+)?$/;
 		return function(str) {
-			return str.replace(re, '<em>$1</em>$2<em>$3</em>$4<em>$5</em>$6');
+			return str.replace(re, '<em>$1</em>$2<em>$3</em>$4<em>$5</em>$6$7<em>$8</em>');
 		};
 	})();
 

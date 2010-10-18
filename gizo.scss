@@ -108,7 +108,6 @@ body {
 	&.label,
 	&.value {
 	  display: inline-block;
-	  vertical-align: middle;
 
 	  & > em {
 		font-style: normal;
@@ -204,6 +203,7 @@ body {
   & > span.value {
 	& > em {
 	  font-weight: bolder;
+	  font-size: 110%;
 	}
   }
 }
@@ -215,7 +215,7 @@ body {
   left: 50.5mm;
 
   & > span.value {
-	letter-spacing: .9mm;
+	letter-spacing: .7mm;
 	font-size: 2.5mm;
 	padding-left: 1.5mm;
 	width: 29mm;
@@ -247,7 +247,6 @@ body {
   width: 54.5mm;
 
   & > span.value {
-	letter-spacing: .4mm;
 	font-size: 2.5mm;
 	padding-left: 4mm;
   }
@@ -260,7 +259,7 @@ body {
   height: 5mm;
 
   & > span.value {
-	letter-spacing: .7mm;
+	letter-spacing: .6mm;
 	font-size: 4.5mm;
 	padding-left: 1.5mm;
 	@include transform(scaleX($scaleX));
@@ -279,16 +278,16 @@ body {
   }
 
   & > span.value {
-	letter-spacing: .7mm;
+	letter-spacing: .25mm;
 	font-weight: bolder;
-	font-size: 3mm;
+	font-size: 3.25mm;
 	padding-left: 1.5mm;
 	vertical-align: top;
 
 	&:before,
 	&:after {
 	  font-weight: normal;
-	  font-size: 2mm;
+	  font-size: 2.5mm;
 	}
 
 	&:before {
@@ -316,9 +315,9 @@ body {
   }
 
   & > span.value {
-	letter-spacing: .7mm;
+	letter-spacing: .5mm;
 	font-size: 2.5mm;
-	margin-left: 1mm;
+	margin-left: .5mm;
 	vertical-align: top;
 	@include transform(scaleX($scaleX));
   }
@@ -336,20 +335,12 @@ body {
   & > span.label {
 	font-size: 1.25mm;
   }
-
-  & > span.value {
-	padding-top: .4mm;
-  }
 }
 
 /* ================ date2 ================ */
 
 #date2 {
   top: $date1_top + $date1_height;
-
-  & > span.value {
-	padding-top: .5mm;
-  }
 }
 
 /* ================ date3 ================ */
@@ -359,11 +350,7 @@ body {
 
   & > span.label {
 	letter-spacing: $letter-spacing;
-	padding-left: .5mm;
-  }
-
-  & > span.value {
-	padding-top: .7mm;
+	padding-left: .25mm;
   }
 }
 
@@ -447,7 +434,7 @@ body {
 
 #logo {
   color: #2db9ca;
-  top: 18.5mm;
+  bottom: 7.5mm;
   left: 51.5mm;
 
   & > pre.value {
@@ -485,7 +472,7 @@ body {
 
   & > pre.value {
 	font-family: serif;
-	font-size: 1.2mm;
+	font-size: 1.1mm;
 	line-height: 1.4mm;
   }
 }

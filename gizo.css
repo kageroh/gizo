@@ -70,8 +70,7 @@ body {
   #card span.label, #card span.value,
   #card pre.label,
   #card pre.value {
-    display: inline-block;
-    vertical-align: middle; }
+    display: inline-block; }
     #card span.label > em, #card span.value > em,
     #card pre.label > em,
     #card pre.value > em {
@@ -157,14 +156,15 @@ body {
 #date1 > span.value > em,
 #date2 > span.value > em,
 #date3 > span.value > em {
-  font-weight: bolder; }
+  font-weight: bolder;
+  font-size: 110%; }
 
 /* ================ birthdate ================ */
 #birthdate {
   border-color: transparent transparent transparent black;
   left: 50.5mm; }
   #birthdate > span.value {
-    letter-spacing: .9mm;
+    letter-spacing: .7mm;
     font-size: 2.5mm;
     padding-left: 1.5mm;
     width: 29mm;
@@ -189,7 +189,6 @@ body {
   top: 11.5mm;
   width: 54.5mm; }
   #issue > span.value {
-    letter-spacing: .4mm;
     font-size: 2.5mm;
     padding-left: 4mm; }
 
@@ -198,7 +197,7 @@ body {
   top: 15.5mm;
   height: 5mm; }
   #limitation > span.value {
-    letter-spacing: .7mm;
+    letter-spacing: .6mm;
     font-size: 4.5mm;
     padding-left: 1.5mm;
     -moz-transform: scaleX(0.75);
@@ -214,14 +213,14 @@ body {
     letter-spacing: 1mm;
     padding: 1mm 0 2mm .25mm; }
   #licensecode > span.value {
-    letter-spacing: .7mm;
+    letter-spacing: .25mm;
     font-weight: bolder;
-    font-size: 3mm;
+    font-size: 3.25mm;
     padding-left: 1.5mm;
     vertical-align: top; }
     #licensecode > span.value:before, #licensecode > span.value:after {
       font-weight: normal;
-      font-size: 2mm; }
+      font-size: 2.5mm; }
     #licensecode > span.value:before {
       content: '\7b2c';
       margin-right: 4mm; }
@@ -242,9 +241,9 @@ body {
   #date1 > span.value,
   #date2 > span.value,
   #date3 > span.value {
-    letter-spacing: .7mm;
+    letter-spacing: .5mm;
     font-size: 2.5mm;
-    margin-left: 1mm;
+    margin-left: .5mm;
     vertical-align: top;
     -moz-transform: scaleX(0.75);
     -webkit-transform: scaleX(0.75);
@@ -258,23 +257,17 @@ body {
     min-height: 4mm; }
   #date1 > span.label {
     font-size: 1.25mm; }
-  #date1 > span.value {
-    padding-top: .4mm; }
 
 /* ================ date2 ================ */
 #date2 {
   top: 41mm; }
-  #date2 > span.value {
-    padding-top: .5mm; }
 
 /* ================ date3 ================ */
 #date3 {
   top: 44mm; }
   #date3 > span.label {
     letter-spacing: 1mm;
-    padding-left: .5mm; }
-  #date3 > span.value {
-    padding-top: .7mm; }
+    padding-left: .25mm; }
 
 /* ================ lic_class ================ */
 #lic_class {
@@ -338,7 +331,7 @@ body {
 /* ================ logo ================ */
 #logo {
   color: #2db9ca;
-  top: 18.5mm;
+  bottom: 7.5mm;
   left: 51.5mm; }
   #logo > pre.value {
     font-weight: bolder;
@@ -369,7 +362,7 @@ body {
   border-radius: 0.5mm; }
   #signet > pre.value {
     font-family: serif;
-    font-size: 1.2mm;
+    font-size: 1.1mm;
     line-height: 1.4mm; }
 
 /* ================ stripe ================ */
